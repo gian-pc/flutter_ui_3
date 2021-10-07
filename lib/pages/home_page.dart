@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -107,21 +108,59 @@ class _HomePageState extends State<HomePage> {
                   ),
                   itemBuilder: (BuildContext context, int index) {
                     return Container(
+                      padding: EdgeInsets.symmetric(
+                          vertical: 18.0, horizontal: 12.0),
                       margin: EdgeInsets.symmetric(horizontal: 10.0),
                       decoration: BoxDecoration(
-                        color: Colors.greenAccent,
-                        borderRadius: BorderRadius.circular(16.0)
-                      ),
-                      child: Center(
-                        child: Text(
-                          index.toString(),
-                          style: TextStyle(fontSize: 50),
-                        ),
+                          color: Color(0xffC2F4E9),
+                          borderRadius: BorderRadius.circular(16.0)),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Icon(
+                            Icons.folder,
+                            color: Color(0xff1ED2A4),
+                            size: 50,
+                          ),
+                          Expanded(child: Container()),
+                          Text(
+                            "Photos",
+                            style: TextStyle(
+                              fontSize: 26.0,
+                              color: Colors.black87.withOpacity(0.65),
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 5.0,
+                          ),
+                          Text(
+                            "564 Items",
+                            style:
+                                TextStyle(color: Colors.black54, fontSize: 16),
+                          ),
+                          SizedBox(
+                            height: 5.0,
+                          ),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.lock,
+                                color: Color(0xff1ED2A4),
+                                size: 19,
+                              ),
+                              Text(
+                                "Private Folder",
+                                style: TextStyle(
+                                    fontSize: 12.0, color: Colors.black54),
+                              )
+                            ],
+                          )
+                        ],
                       ),
                     );
                   }),
             ),
-
           ],
         ),
       ),
